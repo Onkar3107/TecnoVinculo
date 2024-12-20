@@ -37,8 +37,8 @@ This is the **Frontend** module of **TecnoVínculo**, a real-time collaborative 
 
 1. Clone the repository and navigate to the frontend folder:
    ```bash
-   https://github.com/Onkar3107/edunetInternship.git
-   cd tecnovinculo/Frontend
+   git clone https://github.com/Onkar3107/TecnoVinculo.git
+   cd Tecnovinculo/Frontend
    ```
 
 2. Install dependencies:
