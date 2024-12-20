@@ -1,0 +1,7 @@
+# Ignore node_modules in the Frontend folder
+Frontend/node_modules/
+
+# Ignore package-lock.json in the Frontend folder
+Frontend/package-lock.json
+
+# Ignore other files you don't want to push
