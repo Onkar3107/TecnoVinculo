@@ -37,7 +37,7 @@ This is the **Frontend** module of **TecnoVínculo**, a real-time collaborative 
 
 1. Clone the repository and navigate to the frontend folder:
    ```bash
-   git clone https://github.com/yourusername/tecnovinculo.git
+   https://github.com/Onkar3107/edunetInternship.git
    cd tecnovinculo/Frontend
    ```
 
