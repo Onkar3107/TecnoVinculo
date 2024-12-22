@@ -83,4 +83,4 @@ To contribute to the project:
 
 ---
 
-Developed with ❤️ by Onkar Rane and contributors.
+Developed with ❤️ by Onkar Rane.

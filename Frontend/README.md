@@ -63,6 +63,6 @@ To contribute to the frontend module:
 
 ---
 
-Developed with ❤️ by Onkar Rane and contributors.
+Developed with ❤️ by Onkar Rane.
 
 ---
