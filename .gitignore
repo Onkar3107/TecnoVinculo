@@ -5,3 +5,46 @@ Frontend/node_modules/
 Frontend/package-lock.json
 
 # Ignore other files you don't want to push
+# Ignore Node.js dependencies in Backend folder
+Backend/node_modules/
+
+# Ignore logs in Backend folder
+Backend/logs/
+Backend/*.log
+Backend/npm-debug.log*
+Backend/yarn-debug.log*
+Backend/yarn-error.log*
+
+# Ignore environment variables in Backend folder
+Backend/.env
+Backend/.env.local
+Backend/.env.development
+Backend/.env.test
+Backend/.env.production
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore temporary or cache files in Backend
+Backend/*.tmp
+Backend/*.temp
+Backend/.eslintcache
+Backend/.node_repl_history
+
+# Ignore test coverage reports in Backend
+Backend/coverage/
+Backend/.nyc_output/
+
+# Ignore build or dist directories in Backend
+Backend/dist/
+Backend/build/
+
+# Ignore lock files (optional, based on workflow)
+Backend/package-lock.json
+Backend/yarn.lock
