@@ -28,13 +28,15 @@ TecnoVínculo/
 │   ├── package.json
 │   ├── README.md
 ├── Backend/
-│   ├── src/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
 │   ├── package.json
 │   ├── README.md
 ```
 
 - `Frontend`: Contains the user interface code.
-- `Backend`: Includes API logic and server-side operations.
+- `Backend`: Includes API logic, server-side operations, and database models.
 - `README.md`: Documentation for the complete project.
 
 ## Getting Started
@@ -49,7 +51,7 @@ TecnoVínculo/
 1. Clone the repository:
    ```bash
    git clone https://github.com/Onkar3107/TecnoVinculo.git
-   cd Tecnovinculo
+   cd TecnoVinculo
    ```
 
 2. Navigate to the frontend and backend directories to install dependencies:
@@ -62,6 +64,7 @@ TecnoVínculo/
 
 3. Start the backend server:
    ```bash
+   cd Backend
    npm start
    ```
 
