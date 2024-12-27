@@ -29,6 +29,8 @@ TecnoVínculo/
 │   ├── README.md
 ├── Backend/
 │   ├── models/
+│   ├── config/
+│   ├── middleware/
 │   ├── routes/
 │   ├── server.js
 │   ├── package.json
