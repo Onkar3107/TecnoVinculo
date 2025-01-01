@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThreeDBackground from './ThreeDBackground'; // Import the ThreeDBackground component
+import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -13,21 +14,21 @@ const Login = () => {
         // Handle login logic here (e.g., API call)
 
         // Uncomment the following code and configure axios for backend communication
-        // try {
-        //     const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+        try {
+            const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
 
-        //     // Save user data in local storage
-        //     localStorage.setItem('user', JSON.stringify({ username: data.username, token: data.token }));
+            // Save user data in local storage
+            localStorage.setItem('user', JSON.stringify({ username: data.username, token: data.token }));
 
-        //     // Navigate to dashboard
-        //     navigate('/dashboard');
-        // } catch (error) {
-        //     if (error.response && error.response.data && error.response.data.message) {
-        //         setError(error.response.data.message); 
-        //     } else {
-        //         setError('An unexpected error occurred. Please try again later.');
-        //     }
-        // }
+            // Navigate to dashboard
+            navigate('/dashboard');
+        } catch (error) {
+            if (error.response && error.response.data && error.response.data.message) {
+                setError(error.response.data.message); 
+            } else {
+                setError('An unexpected error occurred. Please try again later.');
+            }
+        }
     };
 
     const containerStyle = {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ThreeDBackground from './ThreeDBackground'; // Import the ThreeDBackground component
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -7,22 +9,24 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const navigate = useNavigate();
+
     const handleRegister = async (e) => {
         e.preventDefault();
         // Handle registration logic here (e.g., API call)
 
-        // setError(''); // Clear any previous errors
-        // try {
-        //     const { data } = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
-        //     localStorage.setItem('token', data.token);
-        //     navigate('/'); // Redirect to login if registration is successful
-        // } catch (error) {
-        //     if (error.response && error.response.data && error.response.data.message) {
-        //         setError(error.response.data.message); // Set error message if registration fails
-        //     } else {
-        //         setError('An unexpected error occurred. Please try again later.');
-        //     }
-        // }
+        setError(''); // Clear any previous errors
+        try {
+            const { data } = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+            localStorage.setItem('token', data.token);
+            navigate('/login'); // Redirect to login if registration is successful
+        } catch (error) {
+            if (error.response && error.response.data && error.response.data.message) {
+                setError(error.response.data.message); // Set error message if registration fails
+            } else {
+                setError('An unexpected error occurred. Please try again later.');
+            }
+        }
     };
 
     const containerStyle = {
