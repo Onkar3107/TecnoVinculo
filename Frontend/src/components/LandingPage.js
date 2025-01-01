@@ -1,8 +1,24 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ThreeDBackground from './ThreeDBackground';
 
 const LandingPage = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('user'); // Clear user data from localStorage
+        setIsLoggedIn(false);
+        navigate('/'); // Redirect to the landing page
+    };
+
     return (
         <>
             <ThreeDBackground />
@@ -58,26 +74,53 @@ const LandingPage = () => {
                         offers all the features you need to stay productive.
                     </p>
                     <div className="mt-4">
-                        <Link
-                            to="/register"
-                            className="btn btn-primary btn-lg me-3"
-                            style={{
-                                backgroundColor: 'rgba(0, 123, 255, 0.8)',
-                                border: 'none',
-                            }}
-                        >
-                            Register
-                        </Link>
-                        <Link
-                            to="/login"
-                            className="btn btn-danger btn-lg"
-                            style={{
-                                backgroundColor: 'rgba(220, 53, 69, 0.8)',
-                                border: 'none',
-                            }}
-                        >
-                            Login
-                        </Link>
+                        {isLoggedIn ? (
+                            <>
+                                <Link
+                                    to="/dashboard"
+                                    className="btn btn-success btn-lg me-3"
+                                    style={{
+                                        backgroundColor: 'rgba(0, 123, 255, 0.8)',
+                                        border: 'none',
+                                    }}
+                                >
+                                    Go to Dashboard
+                                </Link>
+                                <button
+                                    onClick={handleLogout}
+                                    className="btn btn-danger btn-lg"
+                                    style={{
+                                        backgroundColor: 'rgba(220, 53, 69, 0.8)',
+                                        border: 'none',
+                                    }}
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to="/register"
+                                    className="btn btn-primary btn-lg me-3"
+                                    style={{
+                                        backgroundColor: 'rgba(0, 123, 255, 0.8)',
+                                        border: 'none',
+                                    }}
+                                >
+                                    Register
+                                </Link>
+                                <Link
+                                    to="/login"
+                                    className="btn btn-danger btn-lg"
+                                    style={{
+                                        backgroundColor: 'rgba(220, 53, 69, 0.8)',
+                                        border: 'none',
+                                    }}
+                                >
+                                    Login
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
