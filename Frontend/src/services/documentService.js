@@ -41,3 +41,12 @@ export const deleteDocument = async (id) => {
     });
     return data;
 };
+
+export const getVersions = async (id) => {
+    const { data } = await axios.get(`${API_URL}/${id}/versions`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+    return data;
+}
