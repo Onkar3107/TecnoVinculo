@@ -110,8 +110,8 @@ router.post('/:id/restore/:version', async (req, res) => {
         }
 
         // Log version history and requested version for debugging
-        console.log('Version History:', document.versionHistory);
-        console.log('Requested Version:', req.params.version);
+        // console.log('Version History:', document.versionHistory);
+        // console.log('Requested Version:', req.params.version);
 
         // Find the version to restore using _id
         const versionToRestore = document.versionHistory.find(
@@ -131,7 +131,7 @@ router.post('/:id/restore/:version', async (req, res) => {
 
         res.status(200).json(document);
     } catch (error) {
-        console.error('Error restoring version:', error.message);
+        // console.error('Error restoring version:', error.message);
         res.status(500).json({ message: error.message });
     }
 });

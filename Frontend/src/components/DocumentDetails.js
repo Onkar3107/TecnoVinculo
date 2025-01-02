@@ -3,7 +3,6 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import {
   getDocumentById,
   updateDocument,
-  getVersions,
 } from "../services/documentService";
 import { io } from "socket.io-client";
 import { Editor } from "@monaco-editor/react"; // Corrected import for Monaco Editor

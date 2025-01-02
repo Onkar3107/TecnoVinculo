@@ -9,7 +9,7 @@ const router = express.Router();
 // POST: Register
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(req.body)
+  // console.log(req.body)
 
   // Check if password is provided
   if (!password) {
@@ -25,7 +25,7 @@ router.post('/register', async (req, res) => {
 
     // Check password strength using zxcvbn
     const passwordStrength = zxcvbn(password);
-    if (passwordStrength.score < 3) { // You can adjust the score threshold (0-4)
+    if (passwordStrength.score <= 3) { // You can adjust the score threshold (0-4)
       return res.status(400).json({ message: 'Password is too weak. Please use a stronger password.' });
     }
 
@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
 
     // Respond with the token
     res.status(201).json({ username: user.name, token });
-    console.log(user.name);
+    // console.log(user.name);
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }

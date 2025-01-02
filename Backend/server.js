@@ -35,7 +35,7 @@ app.use('/api/documents', documentRoutes);
 
 //connection happens when a io called made from socket.io client
 io.on('connection', (socket) => {
-    console.log('New WebSocket connection');
+    // console.log('New WebSocket connection');
 
     //user on documentdetails - useuseffect
     socket.on('joinDocument', (documentId) => {
