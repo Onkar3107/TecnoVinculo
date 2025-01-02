@@ -50,3 +50,12 @@ export const getVersions = async (id) => {
     });
     return data;
 }
+
+export const restoreVersion = async (id, versionId) => {
+    const { data } = await axios.post(`${API_URL}/${id}/restore/${versionId}`, null, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+    return data;
+}

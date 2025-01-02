@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
 import DocumentDetails from './components/DocumentDetails'; // Assuming you have this component
+import DocumentVersions from './components/DocumentVersions';
 import DocumentForm from './components/DocumentForm'; // Assuming you have this component
 import ThreeDBackground from './components/ThreeDBackground'; // Import 3D background
 import './App.css';
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/document/:id" element={<DocumentDetails />} />
+                <Route path="/document/:id/versions" element={<DocumentVersions />} />
                 <Route path="/document/new" element={<DocumentForm />} />
             </Routes>
         </div>
