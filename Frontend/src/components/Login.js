@@ -21,7 +21,7 @@ const Login = () => {
             localStorage.setItem('user', JSON.stringify({ username: data.username, token: data.token }));
 
             // Navigate to dashboard
-            navigate('/dashboard');
+            navigate('/');
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 setError(error.response.data.message); 
