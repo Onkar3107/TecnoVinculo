@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-//for encrypting the password feild before saving into db
+//for encrypting the password field before saving into db
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
       next();
