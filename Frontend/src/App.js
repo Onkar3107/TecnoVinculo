@@ -5,16 +5,15 @@ import Register from './components/Register';
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Dashboard from './components/Dashboard';
-import DocumentDetails from './components/DocumentDetails'; // Assuming you have this component
+import DocumentDetails from './components/DocumentDetails'; 
 import DocumentVersions from './components/DocumentVersions';
-import DocumentForm from './components/DocumentForm'; // Assuming you have this component
-import ThreeDBackground from './components/ThreeDBackground'; // Import 3D background
+import DocumentForm from './components/DocumentForm'; 
+import ThreeDBackground from './components/ThreeDBackground'; 
 import './App.css';
 
 function App() {
     const location = useLocation();
 
-    // Check if the current route matches the pages that should have the 3D background
     const show3DBackground = 
         location.pathname === '/' || 
         location.pathname === '/login' || 
@@ -22,17 +21,14 @@ function App() {
 
     return (
         <div className="app-container">
-            {/* Conditionally render the 3D background only for specific pages */}
             {show3DBackground && (
                 <div className="threeD-model-container">
-                    <ThreeDBackground /> {/* Render the 3D background */}
+                    <ThreeDBackground /> 
                 </div>
             )}
 
-            {/* Navbar */}
             <Navbar />
 
-            {/* Routes */}
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<Login />} />

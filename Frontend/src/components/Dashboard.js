@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap'; // Import Bootstrap components
+import { Modal, Button } from 'react-bootstrap'; 
 
 const Dashboard = () => {
     const [documents, setDocuments] = useState([]);

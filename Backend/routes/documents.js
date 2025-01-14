@@ -109,10 +109,6 @@ router.post('/:id/restore/:version', async (req, res) => {
             return res.status(404).json({ message: 'Document not found' });
         }
 
-        // Log version history and requested version for debugging
-        // console.log('Version History:', document.versionHistory);
-        // console.log('Requested Version:', req.params.version);
-
         // Find the version to restore using _id
         const versionToRestore = document.versionHistory.find(
             (v) => v._id.toString() === req.params.version
