@@ -13,7 +13,9 @@ const documentSchema = new mongoose.Schema({
             updated_at: { type: Date, default: Date.now },
         },
     ],
+    userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' } // Add userId field
 });
+
 
 // Pre-save middleware to handle versioning
 documentSchema.pre('save', function (next) {
