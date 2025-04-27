@@ -16,7 +16,7 @@ const DocumentForm = () => {
       const token = user ? user.token : null;
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/documents",
+        "https://tecnovinculo.onrender.com/api/documents",
         { title, content },
         {
           headers: {

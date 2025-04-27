@@ -21,7 +21,7 @@ const Dashboard = () => {
 
         setLoading(true); // Start loading state before fetching
         const { data } = await axios.get(
-          "http://localhost:5000/api/documents",
+          "https://tecnovinculo.onrender.com/api/documents",
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
@@ -56,7 +56,7 @@ const Dashboard = () => {
       }
 
       await axios.delete(
-        `http://localhost:5000/api/documents/${selectedDoc._id}`,
+        `https://tecnovinculo.onrender.com/api/documents/${selectedDoc._id}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

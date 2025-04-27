@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/documents';
+const API_URL = 'https://tecnovinculo.onrender.com/api/documents';
 const user = JSON.parse(localStorage.getItem('user'));
 // Extract the token from the parsed object
 const token = user ? user.token : null;

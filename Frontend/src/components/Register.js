@@ -17,7 +17,7 @@ const Register = () => {
 
         setError(''); // Clear any previous errors
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+            const { data } = await axios.post('https://tecnovinculo.onrender.com/api/auth/register', { name, email, password });
             localStorage.setItem('token', data.token);
             navigate('/login'); // Redirect to login if registration is successful
         } catch (error) {

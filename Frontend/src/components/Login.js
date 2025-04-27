@@ -15,7 +15,7 @@ const Login = () => {
 
         // Uncomment the following code and configure axios for backend communication
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            const { data } = await axios.post('https://tecnovinculo.onrender.com/api/auth/login', { email, password });
 
             // Save user data in local storage
             localStorage.setItem('user', JSON.stringify({ username: data.username, token: data.token }));

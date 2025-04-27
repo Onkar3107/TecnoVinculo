@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 import { Editor } from "@monaco-editor/react"; // Corrected import for Monaco Editor
 
 const DocumentDetails = () => {
-  const socket = io("http://localhost:5000");
+  const socket = io("https://tecnovinculo.onrender.com");
 
   const { id } = useParams();
   const navigate = useNavigate(); // Using useNavigate for redirection
