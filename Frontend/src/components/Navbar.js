@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 // Styled components
 const NavbarContainer = styled.nav`
