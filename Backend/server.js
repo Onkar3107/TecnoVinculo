@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 // Configure CORS for HTTP requests
 app.use(cors({
-    origin: 'https://tecno-vinculo.vercel.app/',
+    origin: 'https://tecno-vinculo.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'] // Allowed headers
 }));
