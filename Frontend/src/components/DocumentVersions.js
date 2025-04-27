@@ -25,7 +25,7 @@ const DocumentVersions = () => {
       }
     };
     fetchVersions();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleRestore = async (versionId) => {
     try {
@@ -34,7 +34,12 @@ const DocumentVersions = () => {
       alert("Document restored to the selected version.");
       navigate(`/document/${id}`); // Redirect to the document details page after restoring
     } catch (error) {
-      setError("Failed to restore the document version");
+      const errorMessage = error.response?.data?.message || "Failed to restore the document version";
+      // console.error(errorMessage);
+      setError(errorMessage);
+      setTimeout(() => {
+        setError(null); 
+      }, 3000); 
     }
   };
 
