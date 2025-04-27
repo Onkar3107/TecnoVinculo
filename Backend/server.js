@@ -23,7 +23,7 @@ app.use(cors({
 // Socket.io setup for real-time collaboration
 const io = new Server(server, {
     cors: {
-        origin: 'https://tecno-vinculo.vercel.app/', 
+        origin: 'https://tecno-vinculo.vercel.app', 
         methods: ['GET', 'POST']
     }
 });
